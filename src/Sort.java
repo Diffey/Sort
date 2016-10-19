@@ -130,4 +130,71 @@ public class Sort {
         arr[start] = x;
         return start;
     }
+
+
+    /**
+     * 选择排序
+     *
+     * @param arr
+     * @return
+     */
+    public static int[] selectSort(int[] arr) {
+        if (arr == null || arr.length < 2) {
+            return arr;
+        }
+
+        int x, sel;
+        for (int i = 0; i < arr.length; i++) {
+            x = arr[i];
+            sel = i;
+            for (int j = i + 1; j < arr.length; j++) {
+                if (arr[j] < x) {
+                    x = arr[j];
+                    sel = j;
+                }
+            }
+            arr[sel] = arr[i];
+            arr[i] = x;
+        }
+        return arr;
+    }
+
+
+    /**
+     * 堆排序
+     *
+     * @param arr
+     * @return
+     */
+    public static int[] heapSort(int[] arr) {
+        if (arr == null || arr.length < 2) {
+            return arr;
+        }
+
+        adjustHeap(arr, arr.length);
+        for (int i = arr.length - 1; i > 0; i--) {
+            swap(arr, 0, i);
+            adjustHeap(arr, i);
+        }
+        return arr;
+    }
+
+    private static void adjustHeap(int[] arr, int len) {
+        int key = 0;
+        for (int i = len / 2 - 1; i >= 0; i--) {
+            key = 2 * i;
+            if (arr[key] < arr[2 * i + 1]) {
+                key++;
+            }
+            if (arr[i] < arr[key]) {
+                swap(arr, i, key);
+            }
+        }
+    }
+
+    private static void swap(int[] arr, int i, int i1) {
+        int tmp = arr[i];
+        arr[i] = arr[i1];
+        arr[i1] = tmp;
+    }
 }
