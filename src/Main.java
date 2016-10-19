@@ -23,10 +23,10 @@ public class Main {
         //希尔排序
         arr = Arrays.copyOf(oArr, oArr.length);
         PrintUtil.printArray(arr);
-        PrintUtil.printArray(Sort.insertSort(arr));
+        PrintUtil.printArray(Sort.shellSort(arr));
         arr = Arrays.copyOf(oArr2, oArr2.length);
         PrintUtil.printArray(arr);
-        PrintUtil.printArray(Sort.insertSort(arr));
+        PrintUtil.printArray(Sort.shellSort(arr));
         arr = Arrays.copyOf(oArr3, oArr3.length);
         PrintUtil.printArray(arr);
         PrintUtil.printArray(Sort.shellSort(arr));
@@ -34,10 +34,10 @@ public class Main {
         //冒泡排序
         arr = Arrays.copyOf(oArr, oArr.length);
         PrintUtil.printArray(arr);
-        PrintUtil.printArray(Sort.insertSort(arr));
+        PrintUtil.printArray(Sort.bubbleSort(arr));
         arr = Arrays.copyOf(oArr2, oArr2.length);
         PrintUtil.printArray(arr);
-        PrintUtil.printArray(Sort.insertSort(arr));
+        PrintUtil.printArray(Sort.bubbleSort(arr));
         arr = Arrays.copyOf(oArr3, oArr3.length);
         PrintUtil.printArray(arr);
         PrintUtil.printArray(Sort.bubbleSort(arr));
@@ -45,10 +45,10 @@ public class Main {
         //快速排序
         arr = Arrays.copyOf(oArr, oArr.length);
         PrintUtil.printArray(arr);
-        PrintUtil.printArray(Sort.insertSort(arr));
+        PrintUtil.printArray(Sort.selectSort(arr));
         arr = Arrays.copyOf(oArr2, oArr2.length);
         PrintUtil.printArray(arr);
-        PrintUtil.printArray(Sort.insertSort(arr));
+        PrintUtil.printArray(Sort.selectSort(arr));
         arr = Arrays.copyOf(oArr3, oArr3.length);
         PrintUtil.printArray(arr);
         PrintUtil.printArray(Sort.quickSort(arr));
@@ -56,10 +56,10 @@ public class Main {
         //选择排序
         arr = Arrays.copyOf(oArr, oArr.length);
         PrintUtil.printArray(arr);
-        PrintUtil.printArray(Sort.insertSort(arr));
+        PrintUtil.printArray(Sort.quickSort(arr));
         arr = Arrays.copyOf(oArr2, oArr2.length);
         PrintUtil.printArray(arr);
-        PrintUtil.printArray(Sort.insertSort(arr));
+        PrintUtil.printArray(Sort.quickSort(arr));
         arr = Arrays.copyOf(oArr3, oArr3.length);
         PrintUtil.printArray(arr);
         PrintUtil.printArray(Sort.selectSort(arr));
@@ -67,10 +67,10 @@ public class Main {
         //堆排序
         arr = Arrays.copyOf(oArr, oArr.length);
         PrintUtil.printArray(arr);
-        PrintUtil.printArray(Sort.insertSort(arr));
+        PrintUtil.printArray(Sort.heapSort(arr));
         arr = Arrays.copyOf(oArr2, oArr2.length);
         PrintUtil.printArray(arr);
-        PrintUtil.printArray(Sort.insertSort(arr));
+        PrintUtil.printArray(Sort.heapSort(arr));
         arr = Arrays.copyOf(oArr3, oArr3.length);
         PrintUtil.printArray(arr);
         PrintUtil.printArray(Sort.heapSort(arr));
