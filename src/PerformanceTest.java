@@ -55,6 +55,11 @@ public class PerformanceTest {
         eTime = System.currentTimeMillis();
         System.out.println("归并排序对10000个随机数排序时间: " + (eTime - sTime) + "毫秒");
 
+        arr = Arrays.copyOf(randomArr, randomArr.length);
+        sTime = System.currentTimeMillis();
+        Arrays.sort(arr);
+        eTime = System.currentTimeMillis();
+        System.out.println("Java官方Arrays.sort排序对10000个随机数排序时间: " + (eTime - sTime) + "毫秒");
 
         arr = Arrays.copyOf(randomArr2, randomArr2.length);
         sTime = System.currentTimeMillis();
@@ -98,6 +103,12 @@ public class PerformanceTest {
         eTime = System.currentTimeMillis();
         System.out.println("归并排序对100000个随机数排序时间: " + (eTime - sTime) + "毫秒");
 
+        arr = Arrays.copyOf(randomArr2, randomArr2.length);
+        sTime = System.currentTimeMillis();
+        Arrays.sort(arr);
+        eTime = System.currentTimeMillis();
+        System.out.println("Java官方Arrays.sort排序对10000个随机数排序时间: " + (eTime - sTime) + "毫秒");
+
 
         arr = Arrays.copyOf(randomArr3, randomArr3.length);
         sTime = System.currentTimeMillis();
@@ -140,6 +151,12 @@ public class PerformanceTest {
         Sort.mergeSort(arr);
         eTime = System.currentTimeMillis();
         System.out.println("归并排序对1000000个随机数排序时间: " + (eTime - sTime) + "毫秒");
+
+        arr = Arrays.copyOf(randomArr3, randomArr3.length);
+        sTime = System.currentTimeMillis();
+        Arrays.sort(arr);
+        eTime = System.currentTimeMillis();
+        System.out.println("Java官方Arrays.sort排序对10000个随机数排序时间: " + (eTime - sTime) + "毫秒");
     }
 
 

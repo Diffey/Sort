@@ -171,25 +171,34 @@ public class Sort {
             return arr;
         }
 
-        adjustHeap(arr, arr.length);
+        initHeap(arr, arr.length);
         for (int i = arr.length - 1; i > 0; i--) {
             swap(arr, 0, i);
-            adjustHeap(arr, i);
+            adjustHeap(arr, 0, i);
         }
         return arr;
     }
 
-    private static void adjustHeap(int[] arr, int len) {
-        int key = 0;
+    private static void initHeap(int[] arr, int len) {
         for (int i = len / 2 - 1; i >= 0; i--) {
-            key = 2 * i;
-            if (arr[key] < arr[2 * i + 1]) {
-                key++;
-            }
-            if (arr[i] < arr[key]) {
-                swap(arr, i, key);
-            }
+            adjustHeap(arr, i, len);
         }
+    }
+
+    private static void adjustHeap(int[] arr, int start, int len) {
+        if (2 * start + 1 >= len) {
+            return;
+        }
+
+        int key = 2 * start + 1;
+        if (2 * start + 2 < len && arr[2 * start + 2] > arr[key]) {
+            key++;
+        }
+
+        if (arr[start] < arr[key]) {
+            swap(arr, start, key);
+        }
+        adjustHeap(arr, key, len);
     }
 
     private static void swap(int[] arr, int i, int i1) {

@@ -9,4 +9,11 @@ public class PrintUtil {
         }
         System.out.println();
     }
+
+    public static void printArray(int[] arr, boolean v) {
+        for (int i : arr) {
+            System.out.print(i + " ");
+        }
+        System.out.println(v);
+    }
 }
