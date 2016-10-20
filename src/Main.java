@@ -85,5 +85,8 @@ public class Main {
         arr = Arrays.copyOf(oArr3, oArr3.length);
         PrintUtil.printArray(arr);
         PrintUtil.printArray(Sort.mergeSort(arr));
+
+        //排序算法性能测试
+        PerformanceTest.testPerformance();
     }
 }
