@@ -197,4 +197,64 @@ public class Sort {
         arr[i] = arr[i1];
         arr[i1] = tmp;
     }
+
+    /**
+     * 归并排序
+     *
+     * @param arr
+     * @return
+     */
+    public static int[] mergeSort(int[] arr) {
+        if (arr == null || arr.length < 2) {
+            return arr;
+        }
+
+        innerMergeSort(arr, 0, arr.length - 1);
+        return arr;
+    }
+
+    private static void innerMergeSort(int[] arr, int start, int end) {
+        if (start < end) {
+            int mid = (start + end) / 2;
+            innerMergeSort(arr, start, mid);
+            innerMergeSort(arr, mid + 1, end);
+            mergeArray(arr, start, mid, end);
+        }
+    }
+
+    private static void mergeArray(int[] arr, int start, int mid, int end) {
+        int[] left = new int[mid - start + 1];
+        int[] right = new int[end - mid];
+
+        for (int i = start, j = 0; i <= mid; i++, j++) {
+            left[j] = arr[i];
+        }
+
+        for (int i = mid + 1, j = 0; i <= end; i++, j++) {
+            right[j] = arr[i];
+        }
+
+        int lIndex = 0, rIndex = 0, index = start;
+        for (int i = start; i <= end; i++) {
+            if (lIndex >= left.length || rIndex >= right.length) {
+                index = i;
+                break;
+            }
+            if (left[lIndex] <= right[rIndex]) {
+                arr[i] = left[lIndex++];
+            } else {
+                arr[i] = right[rIndex++];
+            }
+        }
+
+        if (lIndex >= left.length) {
+            for (int i = index; i <= end; i++) {
+                arr[i] = right[rIndex++];
+            }
+        } else if (rIndex >= right.length) {
+            for (int i = index; i <= end; i++) {
+                arr[i] = left[lIndex++];
+            }
+        }
+    }
 }

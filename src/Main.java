@@ -74,5 +74,16 @@ public class Main {
         arr = Arrays.copyOf(oArr3, oArr3.length);
         PrintUtil.printArray(arr);
         PrintUtil.printArray(Sort.heapSort(arr));
+
+        //归并排序
+        arr = Arrays.copyOf(oArr, oArr.length);
+        PrintUtil.printArray(arr);
+        PrintUtil.printArray(Sort.mergeSort(arr));
+        arr = Arrays.copyOf(oArr2, oArr2.length);
+        PrintUtil.printArray(arr);
+        PrintUtil.printArray(Sort.mergeSort(arr));
+        arr = Arrays.copyOf(oArr3, oArr3.length);
+        PrintUtil.printArray(arr);
+        PrintUtil.printArray(Sort.mergeSort(arr));
     }
 }
